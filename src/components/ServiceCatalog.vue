@@ -8,10 +8,10 @@
           <span style="color: #1456CB;">Learn more</span>
         </p>
       </div>
-      <div style="display: flex;flex-wrap: wrap; gap: 20px;">
+      <div class="right-content">
         <ServiceSearch :search-input="searchInput" @search="searchChange" />
 
-        <button class="service-package-btn">
+        <button class="common-button">
           + Service Package
         </button>
       </div>
@@ -50,20 +50,14 @@ export default defineComponent({
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 1.6rem;
   justify-content: space-between;
-  .service-package-btn {
-  background-color: #07A88D;
-  border: none;
-  border-radius: 4.4rem;
-  color: white;
-  cursor: pointer;
-  font-size: 1.6rem;
-  height: 4.4rem;
-  line-height: 4.4rem;
-  text-align: center;
-  width: 19.7rem;
-}
+
+  .right-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 }
 
 </style>

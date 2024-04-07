@@ -7,7 +7,7 @@ import { useStore } from '@/stores/store'
 
 const props = defineProps<{ query?: string }>()
 
-const { services, getServices } = useServices(props.query)
+const { services, loading, error, getServices } = useServices(props.query)
 
 const store = useStore()
 
@@ -71,6 +71,14 @@ function viewServiceVersions(id: string, i: number) {
       </div>
     </template>
 
+    <div v-else-if="loading" class="no-results">
+      Loding...
+    </div>
+
+    <div v-else-if="error" class="no-results">
+      Something went wrong
+    </div>
+
     <div v-else class="no-results" data-testid="no-results">
       No services
     </div>
@@ -82,11 +90,15 @@ ul,li {
   padding-inline-start: 0;
 }
 .catalog {
-  display: grid;
-  grid-gap: 36px;
-  grid-template-columns: repeat(3, minmax(324px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin-top: 36px;
+  li {
+    margin: 18px auto;
+    width: 30%;
+    min-width: 324px;
+  }
 }
 .no-results {
   margin-top: 36px;
@@ -103,7 +115,7 @@ ul,li {
   %pagination-btn {
     background-color: transparent;
     border: 1px solid #E0E4EE;
-    border-radius: 100%;
+    border-radius: var(--rounded-border-radius);
     cursor: pointer;
     font-size: 1.4rem;
     height: 4.4rem;
@@ -128,13 +140,41 @@ ul,li {
 // 大于1210 展示3列，小于1210 大于 768 展示2列，小于768 展示1列
 @media (max-width: 1210px) {
   .catalog {
-    grid-template-columns: repeat(2, minmax(324px, 1fr));
+    li {
+      width: 45%;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .catalog {
-    grid-template-columns: repeat(1, minmax(324px, 1fr));
+    li {
+      width: 100%;
+    }
+  }
+}
+
+@supports (display: grid) {
+  .catalog {
+    display: grid;
+    grid-gap: 36px;
+    grid-template-columns: repeat(3, minmax(324px, 1fr));
+    li {
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 1210px) {
+    .catalog {
+      grid-template-columns: repeat(2, minmax(324px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .catalog {
+      grid-template-columns: repeat(1, minmax(324px, 1fr));
+    }
   }
 }
 

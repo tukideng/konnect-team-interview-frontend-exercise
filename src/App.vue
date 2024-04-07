@@ -4,7 +4,7 @@
       <router-link to="/">
         <img alt="logo" src="/assets/logo.svg">
       </router-link>
-      <div style="display: flex;gap: 16px;">
+      <div class="links">
         <router-link to="/">
           <i class="bi bi-people-fill " />
           <span v-if="!isMobile">Organization</span>
@@ -15,7 +15,7 @@
         </router-link>
         <router-link to="/">
           <i class="bi bi-person-fill" />
-          <span v-if="!isMobile">USER Name</span>
+          <span v-if="!isMobile">User Name</span>
         </router-link>
       </div>
     </div>
@@ -61,12 +61,18 @@ header {
   top: 0;
   z-index: 20;
 }
+
 .nav {
-  align-items: center;
   background: linear-gradient(180deg, #09224F 0%, #073382 100%);
   display: flex;
   height: 7rem;
+  line-height: 7rem;
   justify-content: space-between;
+
+  .links {
+    display: flex;
+    gap: 1.6rem;
+  }
 
   a {
     text-decoration: none;
@@ -115,7 +121,7 @@ body {
   margin: 0 auto;
 }
 
-p{
+p {
     margin: 0;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <button @click="backToHome">
+  <button class="common-button" @click="backToHome">
     Back to Service Hub
   </button>
   <ServiceVersions :versions="versions" />
@@ -25,19 +25,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-  button {
-    background-color: #07A88D;
-    border: none;
-    border-radius: 4.4rem;
-    color: white;
-    cursor: pointer;
-    font-size: 1.6rem;
-    height: 4.4rem;
-    line-height: 4.4rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    width: 19.7rem;
-}
-</style>

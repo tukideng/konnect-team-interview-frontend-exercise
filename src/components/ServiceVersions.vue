@@ -68,7 +68,7 @@ const daysBefore = computed(() => (date: string) => {
 <style lang="scss" scoped>
 .service-versions {
   background-color: white;
-  border-radius: 4px;
+  border-radius: var(--small-border-radius);
   padding: 16px 24px;
   .title {
     color: #0B172D;
@@ -104,7 +104,7 @@ const daysBefore = computed(() => (date: string) => {
         }
 
         &:nth-child(2) {
-          color: #8A8A8A;
+          color: var(--info--text-color2);
           font-size: 1.2rem;
         }
 
@@ -122,7 +122,7 @@ const daysBefore = computed(() => (date: string) => {
       }
 
       .service-type {
-        border-radius: 4px;
+        border-radius: var(--small-border-radius);
         color: #1155CB;
         font-size: 1rem;
         padding: 4px 6px;
@@ -144,7 +144,7 @@ const daysBefore = computed(() => (date: string) => {
       }
 
       .avatar {
-        border-radius: 100%;
+        border-radius: var(--rounded-border-radius);
       }
 
       .developer-name {
@@ -153,7 +153,7 @@ const daysBefore = computed(() => (date: string) => {
       }
 
       .days-before {
-        color: #8A8A8A;
+        color: var(--info--text-color2);
         font-size: 1.2rem;
         margin-top: .4rem;
       }

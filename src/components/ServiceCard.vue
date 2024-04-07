@@ -97,8 +97,7 @@ const transformMetric = computed(() => (key:string) => {
 
 .service-card {
   background-color: white;
-  border-radius: 4px;
-  color: #3C4557;
+  border-radius: var(--small-border-radius);
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
@@ -106,7 +105,6 @@ const transformMetric = computed(() => (key:string) => {
   height: 20rem;
   padding: 1.6rem;
   transition: box-shadow 0.3s ease-in-out;
-
   .header-info {
     align-items: center;
     display: flex;
@@ -124,12 +122,12 @@ const transformMetric = computed(() => (key:string) => {
     }
   }
   .version {
-    background-color: #F2F6FE;
-    border-radius: 100px;
-    color:  #5888DB;
+    background-color: var(--badge-background-color);
+    border-radius: 10rem;
+    color:  var(--badge-text-color);
     font-size: 1.3rem;
     font-weight: 600;
-    padding: 8px 18px;
+    padding: .8rem 1.8rem;
     text-align: center;
   }
   .name {
@@ -138,7 +136,7 @@ const transformMetric = computed(() => (key:string) => {
   }
   .description {
     -webkit-box-orient: vertical;
-    color: #707888;
+    color: var(--info--text-color1);
     display: -webkit-box;
     font-size: 1.3rem;
     font-weight: 400;
@@ -150,20 +148,19 @@ const transformMetric = computed(() => (key:string) => {
   }
   %metric-info {
     font-weight: 600;
-    line-height: 16px;
+    line-height: 1.6rem;
     span {
-      color: #707888;
+      color: var(--info--text-color1);
     }
     &::before {
-      border-radius: 100%;
+      border-radius: var(--rounded-border-radius);
       content: '';
       display: inline-block;
-      height: 6px;
-      margin-bottom: 3px;
-      margin-right: 8px;
-      width: 6px
+      height: .6rem;
+      margin-bottom: .3rem;
+      margin-right: .8rem;
+      width: .6rem
     }
-
   }
   .metric-info-active {
     @extend %metric-info;
@@ -177,40 +174,36 @@ const transformMetric = computed(() => (key:string) => {
       background-color: #B6B6BD;
     }
   }
-
   .more-avatar {
     background-color: #F1F1F8;
     border: 2px solid white;
-    border-radius: 100%;
+    border-radius: var(--rounded-border-radius);
     display: inline-block;
     font-size: 1.2rem;
-    height: 34px;
-    line-height: 34px;
-    margin-left: -12px;
+    width: 3.4rem;
+    height: 3.4rem;
+    line-height: 3.4rem;;
+    margin-left: -1.2rem;
     position: relative;
     text-align: center;
     vertical-align: top;
-    width: 34px;
     z-index: 10;
   }
-
   .avatar {
-    border-radius: 100%;
-    margin-left: -12px;
+    border-radius: var(--rounded-border-radius);
+    margin-left:  -1.2rem;
     position: relative;
     z-index: 5;
     &:last-child {
       z-index: 3;
     }
   }
-
   .footer-info {
     align-items: end;
     display: flex;
-    gap: 8px;
+    gap: .8rem;
     justify-content: space-between;
   }
-
   &:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
     cursor: pointer;
