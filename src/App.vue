@@ -66,8 +66,8 @@ header {
   background: linear-gradient(180deg, #09224F 0%, #073382 100%);
   display: flex;
   height: 7rem;
-  line-height: 7rem;
   justify-content: space-between;
+  line-height: 7rem;
 
   .links {
     display: flex;

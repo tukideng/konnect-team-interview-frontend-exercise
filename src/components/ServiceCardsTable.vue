@@ -96,8 +96,8 @@ ul,li {
   margin-top: 36px;
   li {
     margin: 18px auto;
-    width: 30%;
     min-width: 324px;
+    width: 30%;
   }
 }
 .no-results {
@@ -160,8 +160,8 @@ ul,li {
     grid-gap: 36px;
     grid-template-columns: repeat(3, minmax(324px, 1fr));
     li {
-      width: 100%;
       margin: auto;
+      width: 100%;
     }
   }
 

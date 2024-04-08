@@ -180,13 +180,13 @@ const transformMetric = computed(() => (key:string) => {
     border-radius: var(--rounded-border-radius);
     display: inline-block;
     font-size: 1.2rem;
-    width: 3.4rem;
     height: 3.4rem;
     line-height: 3.4rem;;
     margin-left: -1.2rem;
     position: relative;
     text-align: center;
     vertical-align: top;
+    width: 3.4rem;
     z-index: 10;
   }
   .avatar {
