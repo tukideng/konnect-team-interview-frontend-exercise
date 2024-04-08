@@ -1,4 +1,4 @@
-type ServiceType = 'HTTP' | 'REST' | 'SOAP' | 'GraphQL'
+type ServiceType = 'HTTP' | 'REST'
 
 interface ServiceDeveloper {
   name: string

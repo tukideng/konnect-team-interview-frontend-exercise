@@ -105,10 +105,10 @@ The search endpoint is configured to search the following fields for each servic
 
 ```ts
 {
-  id: string;
-  name: string;
-  description: string;
-  type: string;
+  id: string
+  name: string
+  description: string
+  type: string
 }
 ```
 
@@ -197,3 +197,25 @@ pnpm commit
 ```
 
 This will trigger the Commitizen interactive prompt for building your commit message.
+
+<!-- describe design considerations, assumptions, and trade-offs made during this exercise. -->
+
+## Design Considerations, Assumptions, and Trade-offs
+
+### Design Considerations
+
+- **Responsive Design**: The design is responsive and looks great at different browser viewport sizes. The design is implemented using CSS Grid, due to grid compatibility issues, flex is used as a fallback.
+- **Routing and Views**: The user can navigate to a given service from its card by clicking on the card.
+- **State Management**: The state management is implemented using Pinia. when jump to details page, the page will remember the current page and search keyword.
+- **Componentization and Modularity**: The components are well-structured and reusable. The components are divided into smaller components to make them more manageable.
+- **TypeScript Usage**: TypeScript is used throughout the project to provide static typing and better code quality.
+
+### Assumptions
+
+- **Service Package Button**: The create Service Package button doesn't have to be operable. Interacting with this elements could do nothing.
+- **Search Endpoint**: The search function is implemented on the client-side. use `@change` event to trigger the search function, so the search function will be triggered when the user press the enter key.
+- **Pagination**: The pagination is implemented on the client-side. The user can paginate through services by clicking on the pagination buttons.
+
+### Trade-offs
+
+- **Test Coverage**: Since I have less experience with unit testing, I did not write more test code. However, because some errors were thrown when running the test instructions, the content of the existing test file `ServiceCatalog.spec.ts` was updated.
